@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+  
+        body{
+            margin: 0;
+            padding:0
+        }
+        .header{
+            position: fixed;
+            top:0;
+            width:100%;
+            background-color: #006edc;
+            height:80px;
+            margin-bottom: 10px;
+            z-index: 999;             
+        }  
+        .header>.title {
+            right:10%;
+            font-family: "微软雅黑";
+        display: inline-block;
+        margin-left: 10px;
+        margin-right: 10px;
+        line-height: 60px;
+        font-size: 20px;
+        font-weight: normal;
+        color: #ebf4fc;
+        }
+        .main{
+            display: flex;
+            justify-content:center;
+            align-items: flex-start;
+            flex-direction:row;
+            flex-wrap:wrap;
+        }
+        .main>.countainer{
+            display: flex;
+            width: 200px;
+            height:120px;
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-top: 100px;
+            margin-bottom: 10px;
+            background-color: #000fdc;
+        }
+        .main>.countainer2{
+            display: flex;
+            width: 250px;
+            height:150px;
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-top: 100px;
+            margin-bottom: 10px;
+            background-color: #000fdc;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="title">学生</div>
+        <div class="title">教工</div>
+        <div class="title">校友</div>
+        <div class="title">访客</div>
+    </div>
+    <div class="main">
+        <img class="countainer2" src="picture2.jpg" >
+        <img class="countainer" src="picture1.jpg">
+        <img class="countainer" src="picture1.jpg" >
+    </div>
+    <div class="main">
+        <img class="countainer2" src="picture3.jpg" >
+        <img class="countainer" src="picture4.jpg">
+        <img class="countainer" src="picture5.jpg" >
+    </div>
+</body>
+</html>

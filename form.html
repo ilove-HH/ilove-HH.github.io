@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单</title>
+</head>
+<form action="/course/reg.do" method="past" enctype="multipart/form-data">
+    <p>昵称：<input type="text" name="username" id="name" placeholder="请输入用户名"></p>
+    <p>密码：<input type="password" name="password" placeholder="密码输入8-16位" minlength="8" maxlength="16"/></p>
+    <p>
+        邮箱：<input type="text" name="email"/> 
+        <select>
+            <option>@qq.com</option>
+            <option>@126.com</option>
+            <option>@169.com</option>
+        </select>
+    </p>
+    <p>性别： 男<input type="radio" name="xingbie" value="1" checked/>女<input type="radio" name="xingbie" value="2"/></p>
+    <p>兴趣： 旅游<input type="checkbox" name="hobby" />摄影<input type="checkbox" name="hobby"/>运动<input type="checkbox" name="hobby"/></p>
+    <p>个人简介：<br>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+    </p>
+    <p>上传个人照片:<input type="file"/></p>
+    <hr/>
+    <p><input type="submit" value="立即注册"/></p>
+</form>
