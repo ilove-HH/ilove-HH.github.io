@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的表单</title>
+    <style>
+        body{
+            margin: 0;
+            padding:0;
+            background-image: url("picture-sea.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .header{
+            position: fixed;
+            top:0;
+            width:100%;
+            background: #8e9c2a7d;
+            height:80px;
+            margin-bottom: 10px;
+            z-index: 999;             
+        }
+        .header>.title {
+            right:10%;
+            font-family: "微软雅黑";
+            display: inline-block;
+            margin-left: 10px;
+            margin-right: 10px;
+            line-height: 60px;
+            font-size: 20px;
+            font-weight: normal;
+            color: #ebf4fc;
+        }
+        .block{
+            display: flex;
+            top:0;
+            width:100%;
+            background-color: #ffffff00;
+            height:100px;         
+        }    
+        .card{
+            padding-top: 2px;
+            padding-bottom: 2px;
+            padding-left: 1cm;
+            padding-right: 1cm;
+            margin: auto;
+            background-color: rgba(255, 255, 255, 0.832);
+            z-index: 10;
+            justify-content: center;
+            width: 500px;
+            font-family: "幼圆";
+            font-weight: normal;
+            display: block;
+        }
+        h3{
+            
+            background-color: rgba(249, 233, 84, 0.832);
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a class="title" href="indexxx.html">返回</a>
+        <a class="title" href="form.html">表单</a>
+        <div class="title">日记</div>
+    </div>
+    <div class="block"></div>
+    <div class="card" >
+        <hr>
+        <h3>
+        我的表单
+        </h3>
+        <ul>
+        <li><b>性别:</b>女</li>
+        <li><b>电话:</b>185****7681</li>
+        <li><b>邮箱:</b>2142822992@qq.com</li>
+        <li><b>生日:</b>2003.3</li>
+        <li><b>兴趣:</b>网上冲浪</li>
+        </ul>
+        <hr>
+        <h3>
+        教育背景
+        </h3>
+        <table width="100%">
+            <tr>
+                <td><b>时间</b></td>
+                <td><b>学校</b></td>
+                <td><b>职位</b></td>
+            </tr>
+            <tr>
+                <td>2006</td>
+                <td>幼儿园</td>
+                <td>???</td>
+            </tr>
+            <tr>
+                <td>2009</td>
+                <td>小学</td>
+                <td>小学生</td>
+            </tr>
+            <tr>
+                <td>2015</td>
+                <td>中学</td>
+                <td>中学生</td>
+            </tr>
+        </table>
+        <hr>
+        <h3>
+            工作经验
+        </h3>
+        <ol>
+            <li>小学生</li>
+            <li>中学生</li>
+            <li>大学生</li>
+        </ol>
+        <br>
+    </div>
+</body>
+</html>
