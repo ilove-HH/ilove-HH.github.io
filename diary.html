@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日记</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .head {
+        top: 0;
+        width: 100%;
+        position: fixed;
+        background-image: url(head.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 80px;
+        margin-bottom: 10px;
+        z-index: 999;
+    }
+
+    .head .tittle {
+        display: flex;
+        justify-content: center;
+        font-family: "幼圆";
+        font-size: 50px;
+        font-weight: normal;
+        color: rgba(255, 206, 133, 0.9);
+    }
+
+    .block {
+        display: flex;
+        top: 0;
+        width: 100%;
+        background-color: #ffffff00;
+        height: 100px;
+    }
+
+    .main {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex: none;
+        gap: 10px;
+    }
+
+    .text {
+        display: flex;
+        justify-content: center;
+        font-family: "幼圆";
+        font-size: 50px;
+        font-weight: normal;
+        color: #013b69;
+    }
+
+    .main .picture {
+        width: 400px;
+        height: 240px;
+        margin-bottom: 20px;
+    }
+
+    .main .picture1 {
+        width: 400px;
+        height: 500px;
+        margin-top: 20px;
+    }
+
+    .picture {
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
+        height: auto;
+        margin: 0 auto 0 auto;
+        display: block;
+    }
+</style>
+
+<body>
+    <div class="head">
+        <div class="tittle"><b>日记</b></div>
+    </div>
+    <div class="block"></div>
+    <div class="text">向下滑动查看生活日常</div>
+    <img class="picture" src="two.gif">
+    <div class="text">我的日常：<br><br></div>
+    <div class="main">
+        <img class="picture" src="bear2.jpeg">
+        <img class="picture" src="bear.gif">
+        <img class="picture" src="bear1.gif">
+    </div>
+</body>
+
+</html>
