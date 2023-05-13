@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每隔一段时间自动换图片</title>
+</head>
+<style>
+    .picture {
+        justify-content: center;
+        align-items: flex-start;
+        width: 400px;
+        height: auto;
+        margin: auto;
+        margin-top: 150px;
+        display: flex;
+    }
+</style>
+<script>
+    var number = 1;
+    function fun() {
+        number++;
+        if (number > 3) number = 1;
+        var img = document.getElementById("img");
+        img.src = number + ".jpg"
+    }
+    setInterval(fun, 3000)
+</script>
+
+<body>
+    <img id="img" class="picture" src="1.jpg">
+</body>
+
+</html>
