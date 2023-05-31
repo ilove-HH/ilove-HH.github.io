@@ -8,67 +8,180 @@
     <title>登录界面</title>
 </head>
 <style>
-    body {
-        margin: 0;
-        padding: 0;
-        background-image: url("ground3.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-attachment: fixed;
+    @media screen and (min-width: 560px) {
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url("ground3.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .header {
+            z-index: 1px;
+            background-color: #1c004048;
+            width: 100%;
+            height: 70px;
+            position: fixed;
+            top: 0;
+        }
+
+        .header .title {
+            color: aliceblue;
+            padding: 16px;
+            font-family: "幼圆";
+            height: 80px;
+            width: 100px;
+            font-size: 30px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            float: right;
+        }
+
+        .header .title:hover {
+            color: aliceblue
+        }
+
+        .main {
+            font-size: 90px;
+            color: #ffffff00;
+            font-family: "幼圆";
+            border-radius: 20px;
+            margin: auto;
+            position: absolute;
+            text-align: center;
+            left: 0%;
+            right: 0%;
+            top: 40%;
+        }
+
+        .main .content {
+            text-shadow: 0 9px 10px #c9c9c9c7;
+            font-weight: bolder;
+            text-align: center;
+            animation: change-color 3s linear 0.5s forwards;
+        }
+
+        @keyframes change-color {
+            to {
+                color: white;
+            }
+        }
+
+        .form {
+            display: none;
+        }
+
+        h2 {
+            display: none;
+        }
+
+        .input-box {
+            display: none;
+        }
+
+        input {
+            display: none;
+        }
     }
 
-    .header {
-        z-index: 1px;
-        background-color: #1c004048;
-        width: 100%;
-        height: 70px;
-        position: fixed;
-        top: 0;
-    }
+    @media screen and (max-width: 560px) {
+        body {
+            background-image: url("ground5.gif");
+        }
 
-    .header .title {
-        color: aliceblue;
-        padding: 16px;
-        font-family: "幼圆";
-        height: 80px;
-        width: 100px;
-        font-size: 30px;
-        border: none;
-        cursor: pointer;
-        text-decoration: none;
-        display: block;
-        float: right;
-    }
+        .main {
+            display: none;
+        }
 
-    .header .title:hover {
-        color: aliceblue
-    }
+        .header {
+            display: none;
+        }
 
-    .main {
-        font-size: 90px;
-        color:#ffffff00;
-        font-family: "幼圆";
-        border-radius: 20px;
-        margin:auto;
-        position:absolute;
-        top:0;
-        left:0;
-        right:0;
-        bottom:0;
-        text-align: center;
-        top:40%;
-    }
+        .form {
+            padding: 50px 50px;
+            border-radius: 10px;
+            margin: auto;
+            position: absolute;
+            text-align: center;
+            left: 0%;
+            right: 0%;
+            top: 16%;
+            width: 50%;
+            height: 400px;
+            background-color: #46d7ff7c;
+        }
 
-    .main .content {
-        text-shadow: 0 9px 10px #c9c9c9c7;
-        font-weight: bolder;
-        text-align:center;
-        animation: change-color 3s linear 0.5s forwards;
-    }
+        h2 {
+            font-size: 40px;
+            ;
+            color: rgb(236, 236, 236);
+            margin-top: 5%;
+        }
 
-    @keyframes change-color {
-        to {
-            color: white;
+        .input-box {
+            margin-top: 5%;
+        }
+
+        span {
+            padding-top: 2px;
+            padding-bottom: 2px;
+            padding-left: 1cm;
+            padding-right: 1cm;
+            color: rgb(57, 78, 78)
+        }
+
+        input::-webkit-input-placeholder {
+            color: #f0ffffc4;
+        }
+
+        input::-moz-placeholder {
+            color: #f0ffffc4;
+        }
+
+        input:-moz-placeholder {
+            color: #f0ffffc4;
+        }
+
+        input {
+            border: 0;
+            width: 60%;
+            font-size: 16px;
+            color: bisque;
+            background: transparent;
+            border-bottom: 2px solid #ffffedc7;
+            padding: 5px 10px;
+            margin-top: 10px;
+        }
+
+        .button {
+            padding: 16px;
+            cursor: pointer;
+            margin: auto;
+            font-family: "幼圆";
+            display: block;
+            margin-top: 50px;
+            width: 30%;
+            height: 30px;
+            border-radius: 10px;
+            border: 0;
+            color: #ffffff;
+            text-align: center;
+            line-height: 30px;
+            font-size: 26px;
+            background-image: linear-gradient(to right, #30cfd0, #500ca4);
+        }
+
+        .sign_up {
+            margin-top: 45%;
+            margin-left: 60%;
+        }
+
+        a {
+            color: #fff0f0;
         }
     }
 </style>
@@ -76,13 +189,23 @@
 <body>
     <div class="header">
         <div class="button">
-            <a class="title" href="indexxx.html"><b>登录</b></a>
+            <a class="title" href="log2.html"><b>登录</b></a>
         </div>
     </div>
     <div class="main">
         <div class="content">
             欢迎登陆购票界面
         </div>
+    </div>
+    <div class="form">
+        <h2>LOGIN</h2>
+        <div id="input_box"><br>
+            <input type="text" placeholder="请输入入用户名">
+        </div><br>
+        <div class="" input_box><br>
+            <input type="password" placeholder="请输入密码">
+        </div>
+        <div class="button"><b>登录</b></div>
     </div>
 </body>
 
