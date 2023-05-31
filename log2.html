@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录界面</title>
+</head>
+<style>
+    @media screen and (min-width: 560px) {
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url("ground3.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .form {
+            padding: 50px 50px;
+            border-radius: 10px;
+            margin: auto;
+            position: absolute;
+            text-align: center;
+            left: 0%;
+            right: 0%;
+            top: 16%;
+            width: 50%;
+            height: 400px;
+            background-color: #08002aab;
+        }
+
+    }
+
+    @media screen and (max-width: 560px) {
+        body {
+            background-image: url("ground5.gif");
+        }
+
+        .form {
+            padding: 50px 50px;
+            border-radius: 10px;
+            margin: auto;
+            position: absolute;
+            text-align: center;
+            left: 0%;
+            right: 0%;
+            top: 16%;
+            width: 50%;
+            height: 400px;
+            background-color: #46d7ff7c;
+        }
+
+    }
+
+    h2 {
+        font-size: 40px;
+        ;
+        color: rgb(236, 236, 236);
+        margin-top: 5%;
+    }
+
+    .input-box {
+        margin-top: 5%;
+    }
+
+    span {
+        padding-top: 2px;
+        padding-bottom: 2px;
+        padding-left: 1cm;
+        padding-right: 1cm;
+        color: rgb(57, 78, 78)
+    }
+
+    input::-webkit-input-placeholder {
+        color: #f0ffffc4;
+    }
+
+    input::-moz-placeholder {
+        color: #f0ffffc4;
+    }
+
+    input:-moz-placeholder {
+        color: #f0ffffc4;
+    }
+
+    input {
+        border: 0;
+        width: 60%;
+        font-size: 16px;
+        color: bisque;
+        background: transparent;
+        border-bottom: 2px solid #ffffedc7;
+        padding: 5px 10px;
+        margin-top: 10px;
+    }
+
+    .button {
+        padding: 16px;
+        cursor: pointer;
+        margin: auto;
+        font-family: "幼圆";
+        display: block;
+        margin-top: 50px;
+        width: 30%;
+        height: 30px;
+        border-radius: 10px;
+        border: 0;
+        color: #ffffff;
+        text-align: center;
+        line-height: 30px;
+        font-size: 26px;
+        background-image: linear-gradient(to right, #30cfd0, #500ca4);
+    }
+
+    .sign_up {
+        margin-top: 45%;
+        margin-left: 60%;
+    }
+
+    a {
+        color: #fff0f0;
+    }
+</style>
+
+<body>
+    <div class="form">
+        <h2>LOGIN</h2>
+        <div id="input_box"><br>
+            <input type="text" placeholder="请输入入用户名">
+        </div><br>
+        <div class="" input_box><br>
+            <input type="password" placeholder="请输入密码">
+        </div>
+        <div class="button"><b>登录</b></div>
+    </div>
+</body>
+
+</html>
