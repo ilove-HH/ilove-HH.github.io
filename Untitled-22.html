@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script>
+        function displaySubMenu() {
+            var subMenu = this.getElementsByTagName("ul")[0];
+            subMenu.style.display = "block";
+    }
+        function hideSubMenu() {
+        var subMenu = this.getElementsByTagName("ul")[0];
+        subMenu.style.display = "none";
+    }
+    window.onload = function() {
+        let nav = document.getElementById("navigation");
+        let lis = nav.getElementsByTagName("li");
+        for (let l of lis) {
+            for (let ele of l.children) {
+            if (ele.tagName == "UL") {
+                l.addEventListener("mouseover", displaySubMenu);
+                l.addEventListener("mouseout", hideSubMenu);
+                break;
+            }
+            }
+        }
+    };
+    </script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #navigation a {
+            display: block;
+            text-decoration: none;
+            color: #000;
+            width: 280px;
+            line-height: 40px;
+            border: 1px solid #fff;
+            border-width: 1px 1px 0 0;
+            background: #c5dbf2;
+            position: relative;
+            left:50px;
+            top:-60px;
+            z-index: 2;
+            }
+            #navigation li {
+            list-style-type: none;
+            text-align: center;
+            position: relative;
+            left:-40px;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .header{
+            background-color: #efd376;
+            display: flex;
+            height: 160px;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        .container{
+            width:95%;
+        }
+        .header .container{
+            background-color: #efd376;
+            height: 60px;
+        }
+        .main{
+            margin-bottom: 0px;
+            margin-top: 110px;
+            display: flex;
+            justify-content: center;
+        }
+        .main .container{
+            display: flex;
+            gap: 0px;
+        }
+        .aaa{
+            background-color: #f2d9b7;
+            height: 100px;
+            position: absolute;
+            left: 50%;
+            margin-left: -300px;
+            right:50%;
+            top:80px;
+            margin-right: -300px;
+            border-radius: 2%;
+        }
+        .bbb{
+            background-color: #d8891a;
+            height: 80px;
+            position: absolute;
+            left: 50%;
+            margin-left: -301px;
+            right:50%;
+            top:190px;
+            margin-right: -301px;
+        }
+        .circle1{
+            background-color: #0a0a02;
+            width: 100px;
+            height: 40px;
+            position: relative;
+            left: 440px;
+            top:21px;
+            z-index: 1;
+            border-radius: 10%;
+            text-align: center;
+        }
+        .left{
+            width: 150px;
+            flex:none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .card{
+            background-color: #f0e698;
+            height: 100px;
+        }
+        .footer{
+            height: 40px;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+        }
+        .footer .container{
+            background-color: #41444e;
+            height:40px;
+        }
+        .circle2{
+            background-color: #f6f161;
+            width: 100px;
+            height: 24px;
+            top:14px;
+            position: relative;
+            left: 30px;
+            margin-bottom: 12px;
+        }
+        .circle3{
+            background-color: #f9f9ec;
+            width: 100px;
+            height: 30px;
+            position: absolute;
+            left: 450px;
+            top:25px;
+            z-index: 1;
+            border-radius: 10%;
+            text-align: center;
+        }
+        .circle4{
+            background-color: #f9f9ec;
+            width: 100px;
+            height: 30px;
+            position: absolute;
+            left: 320px;
+            top:25px;
+            z-index: 1;
+            border-radius: 10%;
+            text-align: center;
+        }
+        .circle5{
+            background-color: #f9f9ec;
+            width: 100px;
+            height: 30px;
+            position: absolute;
+            left: 40px;
+            top:25px;
+            z-index: 1;
+            border-radius: 10%;
+            text-align: center;
+        }
+        .circle6{
+            background-color: #f9f9ec;
+            width: 100px;
+            height: 30px;
+            position: absolute;
+            left: 180px;
+            top:25px;
+            z-index: 1;
+            border-radius: 10%;
+            text-align: center;
+        }
+        .right{
+            background-color: #ddebe2;
+            height: 400px;
+            flex:auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            position: relative;
+        }
+        .dy{
+            background-color: #f9f8f4;
+            width: 300px;
+            height: 114px;
+            top:14px;
+            position: relative;
+            left: 30px;
+            margin-bottom: 12px;
+        }
+        .write{
+            position: absolute;
+            top:30px;
+            left:90px;
+            text-align: center;
+        }
+        .picture{
+            position: relative;
+            height: 75px;
+            width:60px;
+            margin-left:15px;
+            margin-top:15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header"><h1>购</h1><h1>票</h1>
+        <div class="container">
+    </div></div>
+    <div class="main">
+        <div class="aaa"><div class="circle1"><a href="http://127.0.0.1:5500/Untitled-1.html"><p><font size="5" color="white" left="10px">咨询</font></p></a></div>
+        <div class="aaa"><ul id="navigation">
+            <li onmouseover="displaySubMenu()" onmouseout="hideSubMenu()">
+                <a href="#">木槿校园影院工技大店</a>
+                <ul>
+                    <li><a href="#">DFC影城东鼎店</a></li>
+                    <li><a href="#">红星电影世界上海松江开元地中海店</a></li>
+                    <li><a href="#">太平洋影城（上海松江店）</a></li>
+                    <li><a href="#">CGV影城（松江印象城）</a></li>
+                </ul>
+            </li>
+        </div>
+    </div>
+        <div class="bbb">
+            <div class="circle3">06-05 周一</div>
+            <div class="circle4">06-06 周二</div>
+            <div class="circle5">06-07 周三</div>
+            <div class="circle6">06-08 周四</div>
+        </div>
+        <div class="container">
+            <div class="left">
+                <div class="card">上午场
+                    <div class="circle2">8:30-10:00</div>
+                    <div class="circle2">10:10-11:40</div>
+                </div>
+                <div class="card">下午场
+                    <div class="circle2">2:00-3:30</div>
+                    <div class="circle2">4:00-5:30</div>
+                </div>
+                <div class="card">傍晚场
+                    <div class="circle2">6:00-7:30</div>
+                    <div class="circle2">7:40-9:10</div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="dy">
+                    <img class="picture" src="111.jpg" width="200px">
+                    <div class="write">>人生路不熟  评分9.4<br/>三号厅播出</div>
+                </div>
+                <div class="dy">
+                    <img class="picture" src="222.jpg" width="200px">
+                    <div class="write">>速度与激情10  评分9.0<br/>一号厅播出</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container"></div>
+    </div>
+</body>
+</div>
+</html>
