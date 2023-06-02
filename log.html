@@ -92,7 +92,7 @@
         body {
             background-image: url("ground5.gif");
             background-repeat: no-repeat;
-            background-size: cover;
+            background-size: 100%;
             background-attachment: fixed;
         }
 
@@ -120,7 +120,6 @@
 
         h2 {
             font-size: 40px;
-            ;
             color: rgb(236, 236, 236);
             margin-top: 5%;
         }
@@ -191,9 +190,7 @@
 
 <body>
     <div class="header">
-        <div class="button">
-            <a class="title" href="log2.html"><b>登录</b></a>
-        </div>
+        <a class="title" href="log2.html"><b>登录</b></a>
     </div>
     <div class="main">
         <div class="content">
@@ -203,13 +200,53 @@
     <div class="form">
         <h2>LOGIN</h2>
         <div id="input_box"><br>
-            <input type="text" placeholder="请输入入用户名">
+            <input type="text" id="user" placeholder="请输入入用户名">
         </div><br>
-        <div class="" input_box><br>
-            <input type="password" placeholder="请输入密码">
+        <div class=" input_box"><br>
+            <input type="password" id="password" placeholder="请输入密码">
         </div>
-        <div class="button"><b>登录</b></div>
+        <div class="button">
+            <div type="button" onclick="login()">登录</div>
+        </div>
     </div>
 </body>
+<script>
+    function login() {
+        var user = document.getElementById('user').value
+        var password = document.getElementById('password').value
+        if (!user) {
+            alert("账号不能为空")
+            return false
+        }
+        if (!password) {
+            alert("密码不能为空")
+            return false
+        }
+        if (user == '杨启悦') {
+            if (password == '1234') {
+                alert("登录成功")
+                location.href = 'Untitled-11.html'
+            }
+            if (password != '1234') {
+                alert("密码错误")
+                return false
+            }
+        }
+        if (user == '陈雅雯') {
+            if (password == '1234') {
+                alert("登录成功")
+                location.href = 'Untitled-11.html'
+            }
+            if (password != '1234') {
+                alert("密码错误")
+                return false
+            }
+        }
+        if ((user != '杨启悦') & (user != '陈雅雯')) {
+            alert("账号或者密码错误")
+            return false
+        }
+    }
+</script>
 
 </html>
