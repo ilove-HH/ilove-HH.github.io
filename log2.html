@@ -93,39 +93,32 @@
         border: 0;
         width: 60%;
         font-size: 16px;
-        color: bisque;
+        color: rgb(183, 245, 255);
         background: transparent;
-        border-bottom: 2px solid #ffffedc7;
         padding: 5px 10px;
         margin-top: 10px;
     }
 
     .button {
-        padding: 16px;
-        cursor: pointer;
-        margin: auto;
-        font-family: "幼圆";
-        display: block;
-        margin-top: 50px;
-        width: 30%;
-        height: 30px;
-        border-radius: 10px;
-        border: 0;
-        color: #ffffff;
-        text-align: center;
-        line-height: 30px;
-        font-size: 26px;
-        background-image: linear-gradient(to right, #30cfd0, #500ca4);
-    }
-
+            padding: 16px;
+            cursor: pointer;
+            margin: auto;
+            font-family: "幼圆";
+            display: block;
+            margin-top: 50px;
+            width: 40%;
+            height: 36px;
+            border-radius: 10px;
+            color: #ffffff;
+            text-align: center;
+            background-image: linear-gradient(to right, #30cfd0, #500ca4);
+        }
     .sign_up {
         margin-top: 45%;
         margin-left: 60%;
     }
 
-    a {
-        color: #fff0f0;
-    }
+
 </style>
 
 <body>
@@ -135,54 +128,20 @@
     </div>
     <div class="form">
         <h2>LOGIN</h2>
-        <div id="input_box"><br>
-            <input type="text" id="user" placeholder="请输入用户名">
-        </div><br>
-        <div class="" input_box><br>
-            <input type="password" id="password" placeholder="请输入密码">
-        </div>
-        <div class="button">
-            <div type="button" onclick="login()">登录</div>
-        </div>
+        <form action="http://127.0.0.1:3000/login" method="GET">
+            <div id="input_box"><br>
+                <input type="text" id="user" placeholder="请输入用户名" name="account"
+                    style="border-bottom: 2px solid #ffffedc7;">
+            </div><br>
+            <div class="input_box"><br>
+                <input type="text" id="password" placeholder="请输入密码" name="password"
+                    style="border-bottom: 2px solid #ffffedc7;">
+            </div>
+            <div class="button">
+                <input type="submit" style="font-size:20px;font-family:幼圆;color:#ffffff" value="登录">
+            </div>
+        </form>
     </div>
 </body>
-<script>
-    function login() {
-        var user = document.getElementById('user').value
-        var password = document.getElementById('password').value
-        if (!user) {
-            alert("账号不能为空")
-            return false
-        }
-        if (!password) {
-            alert("密码不能为空")
-            return false
-        }
-        if (user == '杨启悦') {
-            if (password == '1234') {
-                alert("登录成功")
-                location.href = 'Untitled-11.html'
-            }
-            if (password != '1234') {
-                alert("密码错误")
-                return false
-            }
-        }
-        if (user == '陈雅雯') {
-            if (password == '1234') {
-                alert("登录成功")
-                location.href = 'Untitled-11.html'
-            }
-            if (password != '1234') {
-                alert("密码错误")
-                return false
-            }
-        }
-        if ((user != '杨启悦') & (user != '陈雅雯')) {
-            alert("账号或者密码错误")
-            return false
-        }
-    }
-</script>
 
 </html>
