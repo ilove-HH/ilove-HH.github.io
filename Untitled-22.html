@@ -1,275 +1,381 @@
 <!DOCTYPE html>
-<html lang="en">
-    <script>
-        function displaySubMenu() {
-            var subMenu = this.getElementsByTagName("ul")[0];
-            subMenu.style.display = "block";
-    }
-        function hideSubMenu() {
-        var subMenu = this.getElementsByTagName("ul")[0];
-        subMenu.style.display = "none";
-    }
-    window.onload = function() {
-        let nav = document.getElementById("navigation");
-        let lis = nav.getElementsByTagName("li");
-        for (let l of lis) {
-            for (let ele of l.children) {
-            if (ele.tagName == "UL") {
-                l.addEventListener("mouseover", displaySubMenu);
-                l.addEventListener("mouseout", hideSubMenu);
-                break;
-            }
-            }
-        }
-    };
-    </script>
+<html>
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>电影购票系统</title>
     <style>
-        #navigation a {
-            display: block;
-            text-decoration: none;
-            color: #000;
-            width: 280px;
-            line-height: 40px;
-            border: 1px solid #fff;
-            border-width: 1px 1px 0 0;
-            background: #c5dbf2;
-            position: relative;
-            left:50px;
-            top:-60px;
-            z-index: 2;
-            }
-            #navigation li {
-            list-style-type: none;
-            text-align: center;
-            position: relative;
-            left:-40px;
-        }
-        body{
+        body {
             margin: 0;
-            padding: 0;
+            overflow: hidden;
+            background-color: #000;
+            font-family: "幼圆", Arial, sans-serif;
+            letter-spacing: 2px;
         }
-        .header{
-            background-color: #efd376;
-            display: flex;
-            height: 160px;
-            justify-content: center;
-            margin-bottom: 10px;
+
+        canvas {
+            display: block;
+            top: 0;
+            left: 0;
+            z-index: -1;
         }
-        .container{
-            width:95%;
-        }
-        .header .container{
-            background-color: #efd376;
-            height: 60px;
-        }
-        .main{
-            margin-bottom: 0px;
-            margin-top: 110px;
-            display: flex;
-            justify-content: center;
-        }
-        .main .container{
-            display: flex;
-            gap: 0px;
-        }
-        .aaa{
-            background-color: #f2d9b7;
-            height: 100px;
+
+        .container {
+            font-size: 20px;
+            padding: 20px;
+            color: #fff;
+            text-align: center;
             position: absolute;
             left: 50%;
-            margin-left: -300px;
-            right:50%;
-            top:80px;
-            margin-right: -300px;
-            border-radius: 2%;
-        }
-        .bbb{
-            background-color: #d8891a;
-            height: 80px;
-            position: absolute;
-            left: 50%;
-            margin-left: -301px;
-            right:50%;
-            top:190px;
-            margin-right: -301px;
-        }
-        .circle1{
-            background-color: #0a0a02;
-            width: 100px;
-            height: 40px;
-            position: relative;
-            left: 440px;
-            top:21px;
-            z-index: 1;
-            border-radius: 10%;
-            text-align: center;
-        }
-        .left{
-            width: 150px;
-            flex:none;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .card{
-            background-color: #f0e698;
-            height: 100px;
-        }
-        .footer{
-            height: 40px;
-            background-color: black;
-            display: flex;
-            justify-content: center;
-        }
-        .footer .container{
-            background-color: #41444e;
-            height:40px;
-        }
-        .circle2{
-            background-color: #f6f161;
-            width: 100px;
-            height: 24px;
-            top:14px;
-            position: relative;
-            left: 30px;
-            margin-bottom: 12px;
-        }
-        .circle3{
-            background-color: #f9f9ec;
-            width: 100px;
-            height: 30px;
-            position: absolute;
-            left: 450px;
-            top:25px;
-            z-index: 1;
-            border-radius: 10%;
-            text-align: center;
-        }
-        .circle4{
-            background-color: #f9f9ec;
-            width: 100px;
-            height: 30px;
-            position: absolute;
-            left: 320px;
-            top:25px;
-            z-index: 1;
-            border-radius: 10%;
-            text-align: center;
-        }
-        .circle5{
-            background-color: #f9f9ec;
-            width: 100px;
-            height: 30px;
-            position: absolute;
-            left: 40px;
-            top:25px;
-            z-index: 1;
-            border-radius: 10%;
-            text-align: center;
-        }
-        .circle6{
-            background-color: #f9f9ec;
-            width: 100px;
-            height: 30px;
-            position: absolute;
-            left: 180px;
-            top:25px;
-            z-index: 1;
-            border-radius: 10%;
-            text-align: center;
-        }
-        .right{
-            background-color: #ddebe2;
+            right: 0%;
+            top: 45%;
+            width: 70%;
             height: 400px;
-            flex:auto;
+            transform: translate(-50%, -50%);
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        select {
+            margin-bottom: 20px;
+            color: #fff;
+            background-color: #333;
+            padding: 5px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        option {
+            background-color: #333;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 5px 10px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        #result {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .seat-grid {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            grid-gap: 10px;
+            justify-items: center;
+            margin-top: 20px;
+        }
+
+        h1 {
+            font-size: 50px;
+            color: rgb(237, 252, 255);
+            margin-top: 5%;
+        }
+
+        .seat {
+            width: 40px;
+            height: 40px;
+            background-color: #ddd;
+            cursor: pointer;
+        }
+
+        .selected {
+            background-color: #a2faff;
+        }
+
+        .purchased {
+            background-color: #808080;
+            cursor: not-allowed;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+        }
+
+        .seat-selector {
+            background-color: #333;
+            padding: 2px;
+            max-width: 600px;
+            max-height: 600px;
+            overflow: auto;
             display: flex;
-            flex-direction: column;
-            gap: 10px;
-            position: relative;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-content: flex-start;
         }
-        .dy{
-            background-color: #f9f8f4;
-            width: 300px;
-            height: 114px;
-            top:14px;
-            position: relative;
-            left: 30px;
-            margin-bottom: 12px;
+
+        .seat-selector .seat {
+            background-color: #ddd;
+            margin: 5px;
+            cursor: pointer;
         }
-        .write{
-            position: absolute;
-            top:30px;
-            left:90px;
-            text-align: center;
+
+        .seat-selector .seat.selected {
+            background-color: #87f7fc;
         }
-        .picture{
-            position: relative;
-            height: 75px;
-            width:60px;
-            margin-left:15px;
-            margin-top:15px;
+
+        .seat-selector .seat.purchased {
+            background-color: #808080;
+            cursor: not-allowed;
         }
     </style>
 </head>
+
 <body>
-    <div class="header"><h1>购</h1><h1>票</h1>
-        <div class="container">
-    </div></div>
-    <div class="main">
-        <div class="aaa"><div class="circle1"><a href="Untitled-11.html"><p><font size="5" color="white" left="10px">咨询</font></p></a></div>
-        <div class="aaa"><ul id="navigation">
-            <li onmouseover="displaySubMenu()" onmouseout="hideSubMenu()">
-                <a href="#">木槿校园影院工技大店</a>
-                <ul>
-                    <li><a href="#">DFC影城东鼎店</a></li>
-                    <li><a href="#">红星电影世界上海松江开元地中海店</a></li>
-                    <li><a href="#">太平洋影城（上海松江店）</a></li>
-                    <li><a href="#">CGV影城（松江印象城）</a></li>
-                </ul>
-            </li>
-        </div>
-    </div>
-        <div class="bbb">
-            <div class="circle3">06-05 周一</div>
-            <div class="circle4">06-06 周二</div>
-            <div class="circle5">06-07 周三</div>
-            <div class="circle6">06-08 周四</div>
-        </div>
-        <div class="container">
-            <div class="left">
-                <div class="card">上午场
-                    <div class="circle2">8:30-10:00</div>
-                    <div class="circle2">10:10-11:40</div>
+    <canvas id="stars"></canvas>
+
+    <div class="container">
+        <h1>电影购票系统</h1>
+
+        <!-- 地区选择 -->
+        <label for="area">选择地区：</label>
+        <select id="area">
+            <option value="shanghai" style="color: rgb(212, 198, 255);">万达影城</option>
+            <option value="beijing" style="color: rgb(250, 255, 187);">GVC影城</option>
+            <option value="guangzhou" style="color: rgb(216, 229, 255);">DFC影城</option>
+        </select>
+
+        <!-- 日期选择 -->
+        <label for="date">选择日期：</label>
+        <select id="date">
+            <option value="2023-06-22" style="color: rgb(212, 198, 255);">2023年06月22日</option>
+            <option value="2023-06-23" style="color: rgb(250, 255, 187);">2023年06月23日</option>
+            <option value="2023-06-24" style="color: rgb(216, 229, 255);">2023年06月24日</option>
+        </select>
+
+        <!-- 场次选择 -->
+        <label for="session">选择场次：</label>
+        <select id="session">
+            <option value="10:00" style="color: rgb(212, 198, 255);">10:00</option>
+            <option value="14:00" style="color: rgb(250, 255, 187);">14:00</option>
+            <option value="18:00" style="color:rgb(216, 229, 255);">18:00</option>
+        </select>
+
+        <!-- 电影列表 -->
+        <h2>电影列表</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>电影名称</th>
+                    <th>时长</th>
+                    <th>票价</th>
+                    <th>购买</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>消失的她</td>
+                    <td>122分钟</td>
+                    <td>45元</td>
+                    <td><button onclick="openSeatSelector('消失的她')">购买</button></td>
+                </tr>
+                <tr>
+                    <td>蜘蛛侠：纵横宇宙</td>
+                    <td>140分钟</td>
+                    <td>21.9元</td>
+                    <td><button onclick="openSeatSelector('消失的她')">购买</button></td>
+                </tr>
+                <tr>
+                    <td>我爱你！</td>
+                    <td>117分钟</td>
+                    <td>33.9元</td>
+                    <td><button onclick="openSeatSelector('我爱你！')">购买</button></td>
+                </tr>
+                <tr>
+                    <td>八角笼中</td>
+                    <td>117分钟</td>
+                    <td>36.9元</td>
+                    <td><button onclick="openSeatSelector('八角笼中')">购买</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 购票结果 -->
+        <h2>购票结果</h2>
+        <div id="result"></div>
+
+        <!-- 座位选择悬浮界面 -->
+        <div id="seatSelectorOverlay" class="overlay">
+            <div class="seat-selector">
+                <h2>座位选择</h2>
+                <div class="seat-grid">
+                    <!-- 座位以9排10列的矩阵形式呈现 -->
                 </div>
-                <div class="card">下午场
-                    <div class="circle2">2:00-3:30</div>
-                    <div class="circle2">4:00-5:30</div>
-                </div>
-                <div class="card">傍晚场
-                    <div class="circle2">6:00-7:30</div>
-                    <div class="circle2">7:40-9:10</div>
-                </div>
+                <button onclick="purchaseTicket()">购买</button>
             </div>
-            <div class="right">
-                <div class="dy">
-                    <img class="picture" src="111.jpg" width="200px">
-                    <div class="write">>人生路不熟  评分9.4<br/>三号厅播出</div>
-                </div>
-                <div class="dy">
-                    <img class="picture" src="222.jpg" width="200px">
-                    <div class="write">>速度与激情10  评分9.0<br/>一号厅播出</div>
-                </div>
-            </div>
         </div>
     </div>
-    <div class="footer">
-        <div class="container"></div>
-    </div>
+
+    <script>
+        // 创建画布
+        var canvas = document.getElementById("stars");
+        var ctx = canvas.getContext("2d");
+
+        // 设置画布大小
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // 星星对象
+        function Star(x, y, radius, speed) {
+            this.x = x;
+            this.y = y;
+            this.radius = radius;
+            this.speed = speed;
+            this.opacity = Math.random();
+
+            this.update = function () {
+                this.x -= this.speed;
+
+                if (this.x < -this.radius) {
+                    this.x = canvas.width + this.radius;
+                    this.y = Math.random() * canvas.height;
+                }
+
+                this.draw();
+            };
+
+            this.draw = function () {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = "rgba(255, 255, 255, " + this.opacity + ")";
+                ctx.fill();
+            };
+        }
+
+        // 创建星星数组
+        var stars = [];
+        for (var i = 0; i < 200; i++) {
+            var x = Math.random() * canvas.width;
+            var y = Math.random() * canvas.height;
+            var radius = Math.random() * 3;
+            var speed = Math.random() * 2 + 1;
+            stars.push(new Star(x, y, radius, speed));
+        }
+
+        // 动画循环
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (var i = 0; i < stars.length; i++) {
+                stars[i].update();
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        var selectedSeats = [];
+
+        function toggleSeat(seat) {
+            if (seat.classList.contains("purchased") || seat.classList.contains("selected")) {
+                return;
+            }
+
+            seat.classList.toggle("selected");
+
+            if (seat.classList.contains("selected")) {
+                selectedSeats.push(seat.textContent);
+            } else {
+                var index = selectedSeats.indexOf(seat.textContent);
+                if (index > -1) {
+                    selectedSeats.splice(index, 1);
+                }
+            }
+        }
+
+        function openSeatSelector(movieName) {
+            var seatSelectorOverlay = document.getElementById("seatSelectorOverlay");
+            seatSelectorOverlay.style.display = "flex";
+
+            var purchaseButton = document.createElement("button");
+            purchaseButton.textContent = "购买";
+            purchaseButton.addEventListener("click", function () {
+                purchaseTicket(movieName);
+                seatSelectorOverlay.style.display = "none";
+                selectedSeats = [];
+            });
+
+            var seatSelector = document.getElementsByClassName("seat-selector")[0];
+            seatSelector.innerHTML = "";
+            seatSelector.appendChild(document.createElement("h2")).textContent = "座位选择";
+
+            var seatGrid = document.createElement("div");
+            seatGrid.className = "seat-grid";
+            seatSelector.appendChild(seatGrid);
+
+            var numberOfRows = 9;
+            var numberOfColumns = 10;
+
+            for (var row = 1; row <= numberOfRows; row++) {
+                for (var column = 1; column <= numberOfColumns; column++) {
+                    var seat = document.createElement("div");
+                    seat.classList.add("seat");
+                    seat.textContent = row + "-" + column;
+                    seat.addEventListener("click", function () {
+                        toggleSeat(this);
+                    });
+                    seatGrid.appendChild(seat);
+                }
+            }
+
+            // 模拟已购买的座位
+            var purchasedSeats = ["2-3", "4-5", "7-8"];
+            var seats = seatGrid.getElementsByClassName("seat");
+            for (var i = 0; i < seats.length; i++) {
+                if (purchasedSeats.includes(seats[i].textContent)) {
+                    seats[i].classList.add("purchased");
+                    seats[i].removeEventListener("click", function () {
+                        toggleSeat(this);
+                    });
+                }
+            }
+
+            // 显示已购买的座位
+            var result = document.getElementById("result");
+            result.innerHTML = "已购买的座位：" + purchasedSeats.join(", ");
+
+            seatSelector.appendChild(purchaseButton);
+        }
+
+        function purchaseTicket(movieName) {
+            var area = document.getElementById("area").value;
+            var date = document.getElementById("date").value;
+            var session = document.getElementById("session").value;
+            var result = document.getElementById("result");
+
+            // 根据需要进行购票逻辑处理，这里只是简单地显示购票结果
+            result.innerHTML = "您已成功购买" + selectedSeats.length + "张" + movieName + "的电影票，地区：" + document.getElementById("area").options[document.getElementById("area").selectedIndex].text + "，日期：" + date + "，场次：" + session + "，座位：" + selectedSeats.join(", ");
+        }
+
+        // 点击页面其他位置，返回
+        window.addEventListener("click", function (event) {
+            var seatSelectorOverlay = document.getElementById("seatSelectorOverlay");
+            if (event.target === seatSelectorOverlay) {
+                seatSelectorOverlay.style.display = "none";
+                selectedSeats = [];
+            }
+        });
+    </script>
 </body>
-</div>
+
 </html>
