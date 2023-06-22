@@ -52,7 +52,7 @@ app.get('/login', function (req, res) {
       }
       else {
          console.log("OK");
-         res.location('https://ilove-HH.github.io/Untittled-11.html');
+         res.location('https://ilove-HH.github.io/Untitled-11.html');
          res.statusCode = 301;
          res.end('响应的内容');
       }
