@@ -8,188 +8,88 @@
     <title>登录界面</title>
 </head>
 <style>
-    @media screen and (min-width: 560px) {
-        body {
-            margin: 0;
-            padding: 0;
-            background-image: url("ground3.jpg");
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-attachment: fixed;
-        }
+    body {
+        margin: 0;
+        padding: 0;
+        background-image: url("ground3.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
 
-        .header {
-            z-index: 1px;
-            background-color: #1c004048;
-            width: 100%;
-            height: 70px;
-            position: fixed;
-            top: 0;
-        }
+    .header {
+        z-index: 1px;
+        background-color: #1c004048;
+        width: 100%;
+        height: 70px;
+        position: fixed;
+        top: 0;
+    }
 
-        .header .title {
-            color: aliceblue;
-            padding: 16px;
-            font-family: "幼圆";
-            height: 80px;
-            width: 100px;
-            font-size: 30px;
-            border: none;
-            cursor: pointer;
-            text-decoration: none;
-            display: block;
-            float: right;
-        }
+    .header .title {
+        color: aliceblue;
+        padding: 16px;
+        font-family: "幼圆";
+        height: 80px;
+        width: 100px;
+        font-size: 30px;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+        display: block;
+        float: right;
+    }
 
-        .header .title:hover {
-            color: aliceblue
-        }
+    .header .title:hover {
+        color: rgb(211, 255, 251)
+    }
 
-        .main {
-            font-size: 90px;
-            color: #ffffff00;
-            font-family: "幼圆";
-            border-radius: 20px;
-            margin: auto;
-            position: absolute;
-            text-align: center;
-            left: 0%;
-            right: 0%;
-            top: 40%;
-        }
+    .main {
+        font-size: 90px;
+        color: #ffffff00;
+        font-family: "幼圆";
+        border-radius: 20px;
+        margin: auto;
+        position: absolute;
+        text-align: center;
+        left: 0%;
+        right: 0%;
+        top: 40%;
+    }
 
-        .main .content {
-            text-shadow: 0 9px 10px #c9c9c9c7;
-            font-weight: bolder;
-            text-align: center;
-            animation: change-color 3s linear 0.5s forwards;
-        }
+    .main .content {
+        text-shadow: 0 9px 10px #c9c9c9c7;
+        font-weight: bolder;
+        text-align: center;
+        animation: change-color 3s linear 0.5s forwards;
+    }
 
-        @keyframes change-color {
-            to {
-                color: white;
-            }
-        }
-
-        .form {
-            display: none;
-        }
-
-        h2 {
-            display: none;
-        }
-
-        .input-box {
-            display: none;
-        }
-
-        input {
-            display: none;
+    @keyframes change-color {
+        to {
+            color: white;
         }
     }
 
-    @media screen and (max-width: 560px) {
-        body {
-            background-image: url("ground5.gif");
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-attachment: fixed;
-        }
+    .form {
+        display: none;
+    }
 
-        .main {
-            display: none;
-        }
+    h2 {
+        display: none;
+    }
 
-        .header {
-            display: none;
-        }
+    .input-box {
+        display: none;
+    }
 
-        .form {
-            padding: 50px 50px;
-            border-radius: 10px;
-            margin: auto;
-            position: absolute;
-            text-align: center;
-            left: 0%;
-            right: 0%;
-            top: 16%;
-            width: 50%;
-            height: 400px;
-            background-color: #46d7ff7c;
-        }
-
-        h2 {
-            font-size: 40px;
-            color: rgb(236, 236, 236);
-            margin-top: 5%;
-        }
-
-        .input-box {
-            margin-top: 5%;
-        }
-
-        span {
-            padding-top: 2px;
-            padding-bottom: 2px;
-            padding-left: 1cm;
-            padding-right: 1cm;
-            color: rgb(57, 78, 78)
-        }
-
-        input::-webkit-input-placeholder {
-            color: #f0ffffc4;
-        }
-
-        input::-moz-placeholder {
-            color: #f0ffffc4;
-        }
-
-        input:-moz-placeholder {
-            color: #f0ffffc4;
-        }
-
-        input {
-            border: 0;
-            width: 60%;
-            font-size: 16px;
-            color: bisque;
-            background: transparent;
-            border-bottom: 2px solid #ffffedc7;
-            padding: 5px 10px;
-            margin-top: 10px;
-        }
-
-        .button {
-            padding: 16px;
-            cursor: pointer;
-            margin: auto;
-            font-family: "幼圆";
-            display: block;
-            margin-top: 50px;
-            width: 30%;
-            height: 30px;
-            border-radius: 10px;
-            border: 0;
-            color: #ffffff;
-            text-align: center;
-            line-height: 30px;
-            font-size: 26px;
-            background-image: linear-gradient(to right, #30cfd0, #500ca4);
-        }
-
-        .sign_up {
-            margin-top: 45%;
-            margin-left: 60%;
-        }
-
-        a {
-            color: #fff0f0;
-        }
+    input {
+        display: none;
     }
 </style>
 
-<body>
+<body style="text-decoration:none ">
     <div class="header">
+        <a class="title" href="register.html"><b>注册</b></a>
         <a class="title" href="log2.html"><b>登录</b></a>
     </div>
     <div class="main">
@@ -197,56 +97,23 @@
             欢迎登陆购票界面
         </div>
     </div>
+
     <div class="form">
         <h2>LOGIN</h2>
-        <div id="input_box"><br>
-            <input type="text" id="user" placeholder="请输入用户名">
-        </div><br>
-        <div class=" input_box"><br>
-            <input type="password" id="password" placeholder="请输入密码">
-        </div>
-        <div class="button">
-            <div type="button" onclick="login()">登录</div>
-        </div>
+        <form action="http://127.0.0.1:3000/login" method="GET">
+            <div id="input_box"><br>
+                <input type="text" id="user" placeholder="请输入用户名" name="account"
+                    style="border-bottom: 2px solid #ffffedc7;">
+            </div><br>
+            <div class="input_box"><br>
+                <input type="text" id="password" placeholder="请输入密码" name="password"
+                    style="border-bottom: 2px solid #ffffedc7;">
+            </div>
+            <div class="button">
+                <input type="submit" style="font-size:20px;font-family:幼圆;color:#ffffff" value="登录">
+            </div>
+        </form>
     </div>
 </body>
-<script>
-    function login() {
-        var user = document.getElementById('user').value
-        var password = document.getElementById('password').value
-        if (!user) {
-            alert("账号不能为空")
-            return false
-        }
-        if (!password) {
-            alert("密码不能为空")
-            return false
-        }
-        if (user == '杨启悦') {
-            if (password == '1234') {
-                alert("登录成功")
-                location.href = 'Untitled-11.html'
-            }
-            if (password != '1234') {
-                alert("密码错误")
-                return false
-            }
-        }
-        if (user == '陈雅雯') {
-            if (password == '1234') {
-                alert("登录成功")
-                location.href = 'Untitled-11.html'
-            }
-            if (password != '1234') {
-                alert("密码错误")
-                return false
-            }
-        }
-        if ((user != '杨启悦') & (user != '陈雅雯')) {
-            alert("账号或者密码错误")
-            return false
-        }
-    }
-</script>
 
 </html>
